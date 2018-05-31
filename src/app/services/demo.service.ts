@@ -1,0 +1,20 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class DemoService {
+
+  constructor() { }
+
+  getInfo(){
+    
+    var something={
+      hello:"World", 
+      nothing:"Something"
+    };
+    return something;
+  }
+ 
+}
+

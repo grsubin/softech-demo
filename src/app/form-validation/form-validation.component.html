@@ -1,0 +1,24 @@
+<p>This is form Validation Page</p>
+
+<form [formGroup] = "myForm">
+
+  <div>
+    <label>Name: </label>
+    <input type="text" formControlName ="name">
+    <span class = "text-danger" *ngIf = "myForm.controls['name']?.errors?.required">  Name Field Empty</span>
+    
+  </div>
+  <div>
+    <label>Email: </label>
+    <input type="text" formControlName = "email">
+    <span class = "text-danger" *ngIf = "myForm.controls['email']?.errors?.required">  Email Field Empty</span>
+    
+  </div>
+  <div>
+    <label>Password: </label>
+    <input type="password" formControlName ="password" >
+    <span class = "alert alert-danger " *ngIf = "myForm.controls['password']?.errors?.required">  Password Field Empty</span>
+    <span class = "alert alert-danger" *ngIf = "myForm.controls['password']?.errors?.minlength">Password must be of minimun 6 length</span>
+  </div>
+  <input type="submit" [disabled]="!myForm.valid" value="submit">
+</form>
